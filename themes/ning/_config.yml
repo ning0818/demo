@@ -68,7 +68,7 @@ sidenavmain:
 
 #################################评论#################################
 artalk:
-  url: https://artalk.example.com
+  url: https://artalk.ning0818.repl.co
 waline:
   url: https://waline.example.com
 twikoo:
