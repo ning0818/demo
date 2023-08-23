@@ -1,0 +1,15 @@
+
+                            <h1>我的友链</h1>
+                            名称：<%- url_for(theme.friends.name) %>
+                            链接：<%- url_for(theme.friends.url) %>
+                            头像：<%- url_for(theme.friends.logo) %>
+                            简介：<%- url_for(theme.friends.describe) %>
+                            <h1>友情链接</h1>
+                            <div id="qexo-friends"></div>
+                            <link rel="stylesheet" href="<%- url_for(theme.cdn.npm) %>qexo-friends/friends.css"/>
+                            <script src="<%- url_for(theme.cdn.npm) %>qexo-static@1.6.0/hexo/friends.js"></script>
+                            <script>loadQexoFriends("qexo-friends", "<%- url_for(theme.infor.qexourl) %>")</script>
+                            <h1>申请友链</h1>
+                            <div id="friends-api"></div>
+                            <script src="https://unpkg.com/qexo-friends/friends-api.js"></script>
+                            <script>qexo_friend_api("friends-api","<%- url_for(theme.infor.qexourl) %>","<%- url_for(theme.infor.qexokey) %>");</script>

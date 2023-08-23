@@ -1,5 +1,4 @@
 <title><%= page.title %> | <%= config.title %></title>
-<link href="<%- url_for(theme.cdn.github) %>Fgaoxing/blog-cdn@main/grid.css" rel="stylesheet">
 <style>
 main .card {
     padding: 30px;
@@ -16,29 +15,40 @@ main>.card>div pre, main>.card>div span {
                 <div class="sideNavContainer">
                     <div class="IndexPage-results sideNavOffset">
                         <div class="card">
-                        <h1>404 | <%= page.title %></h1>
+                        <h1><%= page.title %></h1>
                         </div>
                         <div class="card">
-                                <link rel="stylesheet" href="/css/link.css">
-                                <body data-type="404" class="pace-done pace-done pace-done" style="overflow: auto;">
-                                    <div id="web_box">
-                                        <div id="web_container">
-                                            <div class="error" id="body-wrap">
-                                                <div class="error-box">
-                                                    <div id="error-wrap">
-                                                        <div class="error-content">
-                                                            <div class="error-img" style="background-image: url('https://bu.dusays.com/2023/05/08/645907596997d.gif')"></div>
-                                                            <div class="error-info">
-                                                                <h1 class="error_title">404</h1>
-                                                                <div class="error_subtitle">可能是文章被删除或输入有误</div>
-                                                                <a class="button--animated" href="/" draggable="false" data-pjax-state=""><i class="bi bi-airplane-fill"></i>回到主页</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                            <h1>我的友链</h1>
+                            名称：<%- url_for(theme.friends.name) %>
+                            链接：<%- url_for(theme.friends.url) %>
+                            头像：<%- url_for(theme.friends.logo) %>
+                            简介：<%- url_for(theme.friends.describe) %>
+                            <h1>友情链接</h1>
+                            <div id="qexo-friends"></div>
+                            <link rel="stylesheet" href="<%- url_for(theme.cdn.npm) %>qexo-friends/friends.css"/>
+                            <script src="<%- url_for(theme.cdn.npm) %>qexo-static@1.6.0/hexo/friends.js"></script>
+                            <script>loadQexoFriends("qexo-friends", "<%- url_for(theme.infor.qexourl) %>")</script>
+                            <h1>申请友链</h1>
+                            <div id="friends-api"></div>
+                            <script src="https://unpkg.com/qexo-friends/friends-api.js"></script>
+                            <script>qexo_friend_api("friends-api","<%- url_for(theme.infor.qexourl) %>","<%- url_for(theme.infor.qexokey) %>");</script>
+
+                        </div>
+                        <div class="share card">
+                            <link rel="stylesheet" class="nightmode" href="/css/copyright.css">
+                            <div class="copyright">
+                                <i class="bi bi-c-circle icon"></i>
+                                <div class="text">
+                                    <br>
+                                    <p>博客内容遵循 <%- url_for(theme.infor.xieyi) %> 协议</p>
+                                    <p>本文永久链接是：<a href="<%= page.permalink %>"><%= page.permalink %></a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <h2><i class="bi bi-chat-fill"></i> 评论</h2>
+                            <%- partial('_partial/comment') %>
                         </div>
                     </div>
                     <%- partial('_partial/sidenav') %>
